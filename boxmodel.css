@@ -1,0 +1,59 @@
+
+/* 
+아래 전체 선택자는 모든 태그를 다 체크하니까 
+렌더링 이슈가 있다는데, 이게 얼마나 체감될지???
+* {
+
+} 
+
+*/
+
+.container {
+    max-width: 1000px;
+    /*
+    최대 1000까지만 늘어나라.
+    */
+    font-size: 0;
+    /*
+    코드를 쓸때 들어가는 엔터도 공백 문자열로 체크됨.
+    그 공백 문자열을 없애기 위해서 넣어주는 코드
+    */
+    margin: 0 auto;
+    /*
+    가운데 정렬, 위와 같은 의미 
+    margin-left:auto;
+    margin-right:auto; */
+}
+
+/* 공통부분 */
+.item {
+    /* 
+    width:100%; 
+    블록 엘리먼트는 원래 부모창 꽉 채움. 
+    이건 오히려 스크롤이 생김. 
+    왜? 
+    박스 모델에서 + padding, margin, border 까지 
+    더해서 생각 실제로 110%(패딩까지 더해서) 차지해서 스크롤 생김.
+    */
+    padding: 5%;
+    vertical-align: top;
+    display:inline-block;
+    font-size: 1rem;
+    /*
+    css는 보통의 경우 상속을 받음. 컨테이너 글씨를 0으로 없애서 여기서 폰트를 다시 잡아주지 않으면
+    글자가 다 사라짐.
+    rem = root em : 보통 16
+    */
+
+}
+
+/* 개별부분 - 달라지는 부분들만 따로 작성 */
+.item-a {
+    width: 30%;
+    background-color: yellow;
+}
+
+.item-b {
+    width: 50%;
+    background-color: yellowgreen;
+}

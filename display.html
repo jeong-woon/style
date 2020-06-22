@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS 레이아웃</title>
+        <meta charset="UTF-8">
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body>
+        <!-- div, section은 그냥 쓰기만 해도 개행이 된다? 공통 특징?-->
+        <!-- div는 display 속성이 block -->
+        <!-- block은 박스, 아무것도 입력 안하면 부모에 꽉 차는 아이 body가 브라우저 창 만큼이라 꽉 참.-->
+        <!-- block(박스)은 너비(width), 높이(height) 설정 가능-->
+        <!-- 레이아웃을 짠다는것은 display속성이 block인 것들로 짠다고 생각하면 됨. -->
+        <!-- div, section, article, header, footer, nav 등등의 태그 -->
+        <div>div</div>
+        <section>
+            section
+        </section>
+        
+        <!-- span, img, a 이런애들은 개행이 없네? 공통 특징?-->
+        <!-- span은 display 기본 속성이 inline -->
+        <!-- inline은 텍스트처럼 생각. 텍스트 만큼만 차지하는 영역 옆에 있으면 자연스럽게 붙음. 개행x -->
+        <!-- inline은 너비(width), 높이(height) 설정 불가능-->
+        <!-- inline-block은 인라인 속성은 동일하나 크기 지정이 가능한 속성임.-->
+        <span>span</span>
+        <a href="http://naver.com">네이버</a>
+        <img src="bt_logo.png" alt="logo" title="logo">
+        <!-- 디스플레이 속성이 달라서 그렇다. -->
+        <!-- 이외에 none, block, inline-block, **flex, **grid 등등 속성이 있다.. -->
+    </body>
+</html>

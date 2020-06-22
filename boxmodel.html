@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS 레이아웃</title>
+        <meta charset="UTF-8">
+        <link href="reset.css" rel="stylesheet">
+        <link href="boxmodel.css" rel="stylesheet">
+    </head>
+    <body>
+        <!-- css box model -->
+        <!-- 
+            box-sizing : content-box(기본값, 기본, 전통 모델)
+            만약, width:300px, height:200px, padding:20px, border:5px, solid black; margin:15px 라고 하면.
+            실제 이 박스가 차지하는 영역은 
+            너비 : width + padding + border + margin = 380px
+            높이 : height + padding + border + margin = 280px
+
+            box-sizing : border-box (다루기가 쉽다. 최신 브라우저만 지원, 익스 옛날껀 지원 안함. ie8 이상 지원)
+            만약, width:300px, height:200px, padding:20px, border:5px, solid black; margin:15px 라고 하면.
+            padding, border까지 width에 포함됨.
+            너비 : width(width + padding + border) + margin = 330px
+            높이 : height(height + padding + border) + margin = 230px
+        -->
+        <div class="container">
+            <section class="item item-a">
+                <h1>Section a</h1>
+                <p>dkeidkdkdkdkdkdjfeogsdfke,dkdkdkdkdk</p>
+            </section>
+            <section class="item item-b">
+                <h1>Section b</h1>
+                <p>dkeidkdkdkdkdkdjfeogsdfke,dkdkdkdkdk</p>
+            </section>
+        </div>
+    </body>
+</html>
