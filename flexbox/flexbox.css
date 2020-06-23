@@ -1,0 +1,114 @@
+/*
+    flex는 일단 '컨테이너'에 적용하는것.
+    자식들을 어떻게 정렬하겠다 하는것.
+    칼럼형식으로 쭉 나열되고, width가 자기 영역만큼만 차지
+*/
+.container {
+    display: flex;
+    /* flex-direction: column; */
+    /*
+        flex-direction
+        row : 기본값(가로로 배치), 
+        column(세로로 배치), 
+        row-reverse, 
+        column-reverse*/
+    /* flex-wrap: nowrap; */
+    /*
+        flex-wrap
+        nowrap : 기본값(화면이 작아지면 아래로 떨어지지 않음.), 
+        wrap(화면이 작아지면 아래로 떨어짐),  
+        wrap-reverse(떨어지는 순서가 거꾸로)
+    */
+    /* justify-content: flex-start; */
+    /*
+        justify-content : 지금현재 축 방향으로 정렬해줌.(오뎅을 오뎅꼬치에 끼워서 움직임??)
+        flex-start(기본값, 시작점으로)
+        flex-end (끝점으로)
+        center (가운데 정렬)
+        space-between (균등분할?)
+        space-around (균등분할 + 여백)
+    */
+    /* align-items: stretch; */
+    /*
+        align-items (축의 수직방향 정렬을 결정함.)
+        stretch (기본값, 축의 수직방향으로 쭈욱 늘어짐.)
+        flex-start(위)
+        flex-end(아래)
+        center(가운데)
+    */
+    /* align-content: flex-start; */
+    /*
+        align-content (flex-wrap: wrap; 상태에서만 적용 가능, align 키워드는 축의 수직방향)
+        flex-start(위 떨어짐)
+        flex-end(아래 떨어짐)
+        center(가운데로 떨어짐)
+        space-beetween(균등분할로 떨어짐)
+        space-around(균등분할+여백 떨어짐)
+    */
+    /*여기까지 플렉스 컨테이너에 적용되는 속성들!*/
+
+    height: 100vh;
+    background: lightgray;
+}
+
+.item {
+    /* flex-grow: 1; */
+    /*
+        flex-grow(신축성 있게 움직이는 박스??)
+        적용전의 '여백'을 각 숫자 비율만큼 나눠가짐.
+        아래 예시 참고
+
+    */
+    /* flex-basis: 0; */
+    /*
+        flex-basis (기본값, auto)
+        기본 점유 공간을 0으로 만들어줌!
+        그래서 이렇게 하고 flex-grow 적용시 진짜 비율만큼 점유
+    */
+    /* flex-shrink: 1; */
+    background: rgba(255, 0, 0, 0.5);
+}
+
+/*grow 예시!*/
+.item:nth-child(1) {
+    /* flex-grow: 1;컨테이너가 영역들 보다 클때 */
+    /* flex-shrink: 1;컨테이너가 영역들 보다 작을때 */
+    /*
+        flex-basis
+        flex-grow
+        flex-shrink
+        모두 포함하는 축약형 -> flex
+        flex에 들어가는 숫자는 비율이라고 했는데
+        단순히 비율만이 아니라 flex를 적용하는것은 남은 공간을 채운다는 의미도 있음
+        여러개의 자식들중 flex를 적용한 자식은 브라우저의 크기에 따라 늘고 줄어듬.
+    */
+    flex:1;
+    /* align-self: flex-start; */
+    /*
+    align-self
+    각각 정렬
+    */
+    order: 3;
+}
+
+.item:nth-child(2) {
+    /* flex-grow: 2;
+    flex-shrink: 2; */
+    flex:2;
+    /* align-self: center; */
+    order: 1;
+}
+
+.item:nth-child(3) {
+    /* flex-grow: 1;
+    flex-shrink: 1; */
+    flex:1;
+    /* align-self: end; */
+    order: 2;
+}
+/*grow 예시!*/
+
+
+.item:nth-child(odd) {
+    background: rgba(255, 255, 0, 0.5);
+}
