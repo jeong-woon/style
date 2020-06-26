@@ -1,40 +1,51 @@
 .container {
-    background-color: pink;
+    display:grid;
+    /* grid-template-columns: 40% 60%;  화면을 40 : 60으로 나눠서 영역 차지 근데 여백 추가시 스크롤 생김*/
+    /* grid-template-columns: 4fr 6fr; 화면을 4:6으로 나눔, 여백 추가해도 스크롤 안생김!! */
+    grid-template-columns: 200px 1fr; /* 특정부분 고정하고 나머지만 늘고 줄도록 설정 */
+    /* grid-template-columns: repeat(3, 1fr);  */
+    /* 위와 같은 의미 grid-template-columns: 1fr 1fr 1fr; */
+    /*grid-auto-rows: 300px; 모든 그리드의 높이를 맞춰줌!*/
+    grid-auto-rows: minmax(200px, auto); /* 최소한 200px 더 높은 애가 있으면 알아서 그만큼*/
+    grid-gap: 1rem; /* 간격 */
+    justify-items: center; /* 각 그리드 박스에서 가운데로 정렬됨., start, end 각각 앞과 뒤*/
+    align-items: start; /* 수직 위(start), 수직 가운데(center), 수직아래(end)*/
+    background: lightgray;
 }
 
 .item {
-    padding: 5%;
+    background: rgba(255, 0, 0, 0.5);
 }
 
-.item-a {
-    background-color: yellow;
+.item:nth-child(odd) {
+    background:rgba(255, 255, 0, 0.5);
 }
 
-.item-b {
-    background-color: yellowgreen;
+.item:nth-child(5) {
+    justify-self: start; /*특정 요소만 정렬*/
+    align-self: center;
 }
 
-/* 미디어 쿼리 */
-@media screen and (min-width: 700px) {
-    /* 
-        우리가 보는 환경 자체가 스크린 임.
-        700px 이상
-        (대충 태블릿 부터 적용되는 디자인)일때.
-     */
-     .container {
-         font-size:0;
-     }
-     .item {
-         display: inline-block;
-         vertical-align: top;
-         font-size: 1rem;
-     }
+/* 꼭 균등한 크기의 그리드 레이아웃만 있으란 법은 없다. */
+.item:nth-child(1) {
+    grid-column:1/4;
+    /*
+        grid-column:시작/끝;까지 가로로 영역을 차지하겠다.
+    */
+}
 
-     .item-a {
-         width:30%;
-     }
+.item:nth-child(4) {
+    grid-column: 3;/* 가로의 시작점 지정 */
+    grid-row:2/4;
+    /*
+        grid-row:시작/끝; 세로로 영역을 차지하겠다.
+    */
+}
 
-     .item-b {
-        width:50%;
-    }
+.item:nth-child(9) {
+    grid-column: 3;
+    grid-row:3/5;
+    /*
+    이런 방식으로 다른 영역을 덮을 수 있음.
+    */
 }
